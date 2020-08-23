@@ -1,9 +1,9 @@
 ---
 title: "Sample Report"
 output:
+  word_document: default
   html_document:
     df_print: paged
-  word_document: default
   pdf_document: default
 ---
 
@@ -19,7 +19,7 @@ log_data <- read.csv(directory)
 ```
 
 ## Automated Report Sample
-This is automation at its finest.
+This is automation at its finest. I AM here, hello 
 ```{r  , echo=FALSE,results='asis'}
 
 ```

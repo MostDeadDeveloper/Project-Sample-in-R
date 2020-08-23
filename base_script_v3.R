@@ -2,7 +2,7 @@
 current_date = Sys.Date()
 current_date_with_time = Sys.time()
 # Setting Checker, use fake_data for testing and use actual data for prod
-use_fake_data <- TRUE
+use_fake_data <- FALSE
 
 # Generate a Folder using the current date as a Name
 directory = paste("output_data/data-",current_date_with_time,sep="")
@@ -17,17 +17,7 @@ if (use_fake_data){
   data <- read.csv("input_data/sample_data.csv")
 }
 
-# Task 1: 
-# Write an R-script that will extract only the TS_Date and 
-# RETURNS columns and export to a csv file.
-ts_data_rows = data[2]
 
-# Prepare the corresponding file name
-file_name = "ts-data-rows"
-file_name_with_directory = paste(directory,file_name,".csv",sep="")
-
-# Write The File
-write.csv(ts_data_rows,file_name_with_directory)
 
 # Task 2: Write an R script that will extract all lines that are identified as NJUMP
 # in the OUTLIER TYPE column to be exported in a csv file bearing the file name
@@ -82,6 +72,22 @@ formatted_njump = paste("No. of NJUMP:",njump_count)
 formatted_null_count = paste("No. of NULL:",null_count)
 formatted_mean = paste("Returns Mean:",mean_of_returns)
 formatted_sd = paste("Returns Standard Deviation:",sd_of_returns)
+
+# Task 1: 
+# Write an R-script that will extract only the TS_Date and 
+# RETURNS columns and export to a csv file.
+ts_data_rows = data[,2]
+
+# Prepare the corresponding file name
+file_name = "ts-data-rows"
+file_name_with_directory = paste(directory,file_name,".csv",sep="")
+
+z <- data.frame(
+  TS_DATE=ts_data_rows,
+  RETURNS=returns_vector
+)
+# Write The File
+write.csv(z,file_name_with_directory,row.names=FALSE)
 
 # Create a file to Export Results
 

@@ -1,5 +1,0 @@
-"0","library(knitr)"
-"0","kable(timseries_njump_data,caption = ""Data With Outlier Type of NJUMP"")"
-"2","Error in kable(timseries_njump_data, caption = ""Data With Outlier Type of NJUMP"") : 
-  object 'timseries_njump_data' not found
-"
