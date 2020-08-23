@@ -1,0 +1,7 @@
+"0","selected_folder = ""1"""
+"0","directory = paste(""output_data/"",selected_folder,""/"",sep="""")"
+"0","t <- paste(directory,""TIMESERIES-NJUMP.csv"",sep="""")"
+"0","njump_data <- read.csv(t) "
+"2","cannot open file 'output_data/1/TIMESERIES-NJUMP.csv': No such file or directory"
+"2","Error in file(file, ""rt"") : cannot open the connection
+"

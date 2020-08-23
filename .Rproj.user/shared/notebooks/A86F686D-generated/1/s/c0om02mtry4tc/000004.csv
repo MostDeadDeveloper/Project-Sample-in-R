@@ -1,0 +1,2 @@
+"0","library(knitr)"
+"0","kable(timeseries_njump_data,caption = ""Data With Outlier Type of NJUMP"")"

@@ -1,0 +1,39 @@
+---
+title: "Sample Report"
+output: word_document
+
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(knitr)
+```
+
+```{r load_data}
+selected_folder = "1"
+directory = paste("output_data/",selected_folder,"/",sep="")
+t <- paste(directory,"TIMESERIES-NJUMP.csv",sep="")
+njump_data <- read.csv(t) 
+pjump_data <- read.csv(paste(directory,"TIMESERIES-PJUMP.csv",sep=""))
+ts-data <- read.csv(paste(directory,"ts-data-rows.csv",sep=""))
+```
+
+## Automated Report Sample
+This is automation at its finest.
+```{r  , echo=FALSE}
+kable(data,caption = "Data With Outlier Type of NJUMP")
+```
+
+```{r   echo=FALSE}
+kable(timeseries_pjump_data,caption = "Data With Outlier Type of PJUMP")
+```
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r pressure, echo=FALSE}
+plot(pressure)
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

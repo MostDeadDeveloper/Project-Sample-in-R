@@ -1,0 +1,1 @@
+{"frames":[{"func":"kable(timseries_njump_data, caption = \"Data With Outlier Type of NJUMP\")","file":"","line_number":0,"end_line_number":0,"character_number":0,"end_character_number":0}],"message":"Error in kable(timseries_njump_data, caption = \"Data With Outlier Type of NJUMP\") : \n  object 'timseries_njump_data' not found\n"}
