@@ -1,3 +1,0 @@
-"0","directory = paste(""Generated Reports/"",""output_logs.csv"",sep="""")"
-"0","log_data <- read.csv(directory) "
-"0",""

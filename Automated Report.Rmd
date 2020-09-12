@@ -1,14 +1,15 @@
 ---
 title: "Sample Report"
 output:
-  word_document: default
   html_document:
     df_print: paged
+  word_document: default
   pdf_document: default
 ---
 
 ```{r setup, include=FALSE}
 knitr::opts_chunk$set(echo = TRUE)
+library(ggplot2)
 library(knitr)
 ```
 
@@ -34,6 +35,23 @@ kable(log_data,caption = "Reported Logs of Each Execution")
 You can also embed plots, for example:
 
 ```{r pressure, echo=FALSE}
-plot(pressure)
+hist(log_data$NJUMP_COUNT)
+
+ggplot(midwest, aes(x=area, y=poptotal)) + 
+  geom_point(aes(col=state), size=3) +  # Set color to vary based on state categories.
+  geom_smooth(method="lm", col="firebrick", size=2) + 
+  coord_cartesian(xlim=c(0, 0.1), ylim=c(0, 1000000)) + 
+  labs(
+    title="Area Vs Population",
+    subtitle="From midwest dataset",
+    y="Population",
+    x="Area",
+    caption="Midwest Demographics"
+  )
+
+ggplot(log_data, aes(x=Calculated_Mean, y=Calculated_SD)) + 
+  geom_point(col="steelblue", size=3) +  # Set color to vary based on state categories.
+  coord_cartesian(xlim=c(0, 0.1), ylim=c(0, 80)) + 
+  labs(title="Weird Data", subtitle="From Logs Data", y="Calculated_SD", x="Calculated_Mean,", caption="A Bad Example of Test Data")
 ```
 

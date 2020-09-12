@@ -2,7 +2,7 @@
 current_date = Sys.Date()
 current_date_with_time = Sys.time()
 # Setting Checker, use fake_data for testing and use actual data for prod
-use_fake_data <- FALSE
+use_fake_data <-  FALSE
 
 # Generate a Folder using the current date as a Name
 directory = paste("output_data/data-",current_date_with_time,sep="")
